@@ -1,0 +1,17 @@
+[Inputs]
+clk
+ready
+hold
+int
+reset
+=dataIn[7:0]=
+[Outputs]
+sync
+dataBusIn
+waitAck
+wr
+hlda
+inte
+=addressBus[15:0]=
+=dataOut[7:0]=
+[BiDir]
