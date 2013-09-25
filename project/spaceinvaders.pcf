@@ -1,0 +1,327 @@
+//! **************************************************************************
+// Written by: Map P.68d on Mon Sep 16 09:12:18 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "P94" LEVEL 1;
+COMP "blue<0>" LOCATE = SITE "P99" LEVEL 1;
+COMP "blue<1>" LOCATE = SITE "P97" LEVEL 1;
+COMP "blue<2>" LOCATE = SITE "P92" LEVEL 1;
+COMP "blue<3>" LOCATE = SITE "P87" LEVEL 1;
+COMP "leds<0>" LOCATE = SITE "P61" LEVEL 1;
+COMP "leds<1>" LOCATE = SITE "P66" LEVEL 1;
+COMP "leds<2>" LOCATE = SITE "P67" LEVEL 1;
+COMP "leds<3>" LOCATE = SITE "P75" LEVEL 1;
+COMP "hsync" LOCATE = SITE "P117" LEVEL 1;
+COMP "vsync" LOCATE = SITE "P116" LEVEL 1;
+COMP "red<0>" LOCATE = SITE "P118" LEVEL 1;
+COMP "red<1>" LOCATE = SITE "P119" LEVEL 1;
+COMP "red<2>" LOCATE = SITE "P120" LEVEL 1;
+COMP "red<3>" LOCATE = SITE "P121" LEVEL 1;
+COMP "green<0>" LOCATE = SITE "P84" LEVEL 1;
+COMP "green<1>" LOCATE = SITE "P82" LEVEL 1;
+COMP "green<2>" LOCATE = SITE "P80" LEVEL 1;
+COMP "green<3>" LOCATE = SITE "P78" LEVEL 1;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        readWriteMemory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram_pins<26>
+        = BEL
+        "readWriteMemory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>
+        = BEL
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>
+        = BEL
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>
+        = BEL
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>
+        = BEL
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram"
+        PINNAME CLKA;
+TIMEGRP allClocks_clkout0 = BEL "ramAddr_0" BEL "ramAddr_1" BEL "ramAddr_2"
+        BEL "ramAddr_3" BEL "ramAddr_4" BEL "ramAddr_5" BEL "ramAddr_6" BEL
+        "ramAddr_7" BEL "ramAddr_8" BEL "ramAddr_9" BEL "vramAddrA_0" BEL
+        "vramAddrA_1" BEL "vramAddrA_2" BEL "vramAddrA_3" BEL "vramAddrA_4"
+        BEL "vramAddrA_5" BEL "vramAddrA_6" BEL "vramAddrA_7" BEL
+        "vramAddrA_8" BEL "vramAddrA_9" BEL "vramAddrA_10" BEL "vramAddrA_11"
+        BEL "vramAddrA_12" BEL "romAddr_0" BEL "romAddr_1" BEL "romAddr_2" BEL
+        "romAddr_3" BEL "romAddr_4" BEL "romAddr_5" BEL "romAddr_6" BEL
+        "romAddr_7" BEL "romAddr_8" BEL "romAddr_9" BEL "romAddr_10" BEL
+        "romAddr_11" BEL "romAddr_12" BEL "ramDataIn_0" BEL "ramDataIn_1" BEL
+        "ramDataIn_2" BEL "ramDataIn_3" BEL "ramDataIn_4" BEL "ramDataIn_5"
+        BEL "ramDataIn_6" BEL "ramDataIn_7" BEL "vramDataInA_0" BEL
+        "vramDataInA_1" BEL "vramDataInA_2" BEL "vramDataInA_3" BEL
+        "vramDataInA_4" BEL "vramDataInA_5" BEL "vramDataInA_6" BEL
+        "vramDataInA_7" BEL "ramWea_0" BEL "dataBusReady" BEL "vramWea_0" BEL
+        "cpuDataIn_0" BEL "cpuDataIn_1" BEL "cpuDataIn_2" BEL "cpuDataIn_3"
+        BEL "cpuDataIn_4" BEL "cpuDataIn_5" BEL "cpuDataIn_6" BEL
+        "cpuDataIn_7" BEL "memState_FSM_FFd2" BEL "memState_FSM_FFd1" BEL
+        "allClocks/clkout1_buf" BEL "cpu/procloop.waitCycleCount_31" BEL
+        "cpu/procloop.waitCycleCount_30" BEL "cpu/procloop.waitCycleCount_29"
+        BEL "cpu/procloop.waitCycleCount_28" BEL
+        "cpu/procloop.waitCycleCount_27" BEL "cpu/procloop.waitCycleCount_26"
+        BEL "cpu/procloop.waitCycleCount_25" BEL
+        "cpu/procloop.waitCycleCount_24" BEL "cpu/procloop.waitCycleCount_23"
+        BEL "cpu/procloop.waitCycleCount_22" BEL
+        "cpu/procloop.waitCycleCount_21" BEL "cpu/procloop.waitCycleCount_20"
+        BEL "cpu/procloop.waitCycleCount_19" BEL
+        "cpu/procloop.waitCycleCount_18" BEL "cpu/procloop.waitCycleCount_17"
+        BEL "cpu/procloop.waitCycleCount_16" BEL
+        "cpu/procloop.waitCycleCount_15" BEL "cpu/procloop.waitCycleCount_14"
+        BEL "cpu/procloop.waitCycleCount_13" BEL
+        "cpu/procloop.waitCycleCount_12" BEL "cpu/procloop.waitCycleCount_11"
+        BEL "cpu/procloop.waitCycleCount_10" BEL
+        "cpu/procloop.waitCycleCount_9" BEL "cpu/procloop.waitCycleCount_8"
+        BEL "cpu/procloop.waitCycleCount_7" BEL
+        "cpu/procloop.waitCycleCount_6" BEL "cpu/procloop.waitCycleCount_5"
+        BEL "cpu/procloop.waitCycleCount_4" BEL
+        "cpu/procloop.waitCycleCount_3" BEL "cpu/procloop.waitCycleCount_2"
+        BEL "cpu/procloop.waitCycleCount_1" BEL
+        "cpu/procloop.waitCycleCount_0" BEL "cpu/addressBus_15" BEL
+        "cpu/addressBus_14" BEL "cpu/addressBus_13" BEL "cpu/addressBus_12"
+        BEL "cpu/addressBus_11" BEL "cpu/addressBus_10" BEL "cpu/addressBus_9"
+        BEL "cpu/addressBus_8" BEL "cpu/addressBus_7" BEL "cpu/addressBus_6"
+        BEL "cpu/addressBus_5" BEL "cpu/addressBus_4" BEL "cpu/addressBus_3"
+        BEL "cpu/addressBus_2" BEL "cpu/addressBus_1" BEL "cpu/addressBus_0"
+        BEL "cpu/dataOut_7" BEL "cpu/dataOut_6" BEL "cpu/dataOut_5" BEL
+        "cpu/dataOut_4" BEL "cpu/dataOut_3" BEL "cpu/dataOut_2" BEL
+        "cpu/dataOut_1" BEL "cpu/dataOut_0" BEL "cpu/a_7" BEL "cpu/a_6" BEL
+        "cpu/a_5" BEL "cpu/a_4" BEL "cpu/a_3" BEL "cpu/a_2" BEL "cpu/a_1" BEL
+        "cpu/a_0" BEL "cpu/aluOperandB_7" BEL "cpu/aluOperandB_6" BEL
+        "cpu/aluOperandB_5" BEL "cpu/aluOperandB_4" BEL "cpu/aluOperandB_3"
+        BEL "cpu/aluOperandB_2" BEL "cpu/aluOperandB_1" BEL
+        "cpu/aluOperandB_0" BEL "cpu/pc_15" BEL "cpu/pc_14" BEL "cpu/pc_13"
+        BEL "cpu/pc_12" BEL "cpu/pc_11" BEL "cpu/pc_10" BEL "cpu/pc_9" BEL
+        "cpu/pc_8" BEL "cpu/pc_7" BEL "cpu/pc_6" BEL "cpu/pc_5" BEL "cpu/pc_4"
+        BEL "cpu/pc_3" BEL "cpu/pc_2" BEL "cpu/pc_1" BEL "cpu/pc_0" BEL
+        "cpu/regDataIn_15" BEL "cpu/regDataIn_14" BEL "cpu/regDataIn_13" BEL
+        "cpu/regDataIn_12" BEL "cpu/regDataIn_11" BEL "cpu/regDataIn_10" BEL
+        "cpu/regDataIn_9" BEL "cpu/regDataIn_8" BEL "cpu/regDataIn_7" BEL
+        "cpu/regDataIn_6" BEL "cpu/regDataIn_5" BEL "cpu/regDataIn_4" BEL
+        "cpu/regDataIn_3" BEL "cpu/regDataIn_2" BEL "cpu/regDataIn_1" BEL
+        "cpu/regDataIn_0" BEL "cpu/aluCarryIn" BEL "cpu/flagsCarry" BEL
+        "cpu/dataBusIn" BEL "cpu/regLoad" BEL "cpu/wr" BEL "cpu/flagsZero" BEL
+        "cpu/currentState_6" BEL "cpu/currentState_5" BEL "cpu/currentState_4"
+        BEL "cpu/currentState_3" BEL "cpu/currentState_2" BEL
+        "cpu/currentState_1" BEL "cpu/currentState_0" BEL
+        "cpu/readMemReturnState_6" BEL "cpu/readMemReturnState_5" BEL
+        "cpu/readMemReturnState_4" BEL "cpu/readMemReturnState_3" BEL
+        "cpu/readMemReturnState_2" BEL "cpu/readMemReturnState_1" BEL
+        "cpu/readMemReturnState_0" BEL "cpu/flagsParity" BEL "cpu/flagsSign"
+        BEL "cpu/flagsAuxCarry" BEL "cpu/aluOperandA_7" BEL
+        "cpu/aluOperandA_6" BEL "cpu/aluOperandA_5" BEL "cpu/aluOperandA_4"
+        BEL "cpu/aluOperandA_3" BEL "cpu/aluOperandA_2" BEL
+        "cpu/aluOperandA_1" BEL "cpu/aluOperandA_0" BEL "cpu/aluOpSelect_2"
+        BEL "cpu/aluOpSelect_1" BEL "cpu/aluOpSelect_0" BEL "cpu/status_1" BEL
+        "cpu/status_0" BEL "cpu/procloop.opcode_7" BEL "cpu/procloop.opcode_6"
+        BEL "cpu/procloop.opcode_2" BEL "cpu/procloop.opcode_1" BEL
+        "cpu/procloop.opcode_0" BEL "cpu/registers/sp/dataOut_15" BEL
+        "cpu/registers/sp/dataOut_14" BEL "cpu/registers/sp/dataOut_13" BEL
+        "cpu/registers/sp/dataOut_12" BEL "cpu/registers/sp/dataOut_11" BEL
+        "cpu/registers/sp/dataOut_10" BEL "cpu/registers/sp/dataOut_9" BEL
+        "cpu/registers/sp/dataOut_8" BEL "cpu/registers/sp/dataOut_7" BEL
+        "cpu/registers/sp/dataOut_6" BEL "cpu/registers/sp/dataOut_5" BEL
+        "cpu/registers/sp/dataOut_4" BEL "cpu/registers/sp/dataOut_3" BEL
+        "cpu/registers/sp/dataOut_2" BEL "cpu/registers/sp/dataOut_1" BEL
+        "cpu/registers/sp/dataOut_0" BEL "cpu/registers/l/dataOut_7" BEL
+        "cpu/registers/l/dataOut_6" BEL "cpu/registers/l/dataOut_5" BEL
+        "cpu/registers/l/dataOut_4" BEL "cpu/registers/l/dataOut_3" BEL
+        "cpu/registers/l/dataOut_2" BEL "cpu/registers/l/dataOut_1" BEL
+        "cpu/registers/l/dataOut_0" BEL "cpu/registers/h/dataOut_7" BEL
+        "cpu/registers/h/dataOut_6" BEL "cpu/registers/h/dataOut_5" BEL
+        "cpu/registers/h/dataOut_4" BEL "cpu/registers/h/dataOut_3" BEL
+        "cpu/registers/h/dataOut_2" BEL "cpu/registers/h/dataOut_1" BEL
+        "cpu/registers/h/dataOut_0" BEL "cpu/registers/e/dataOut_7" BEL
+        "cpu/registers/e/dataOut_6" BEL "cpu/registers/e/dataOut_5" BEL
+        "cpu/registers/e/dataOut_4" BEL "cpu/registers/e/dataOut_3" BEL
+        "cpu/registers/e/dataOut_2" BEL "cpu/registers/e/dataOut_1" BEL
+        "cpu/registers/e/dataOut_0" BEL "cpu/registers/d/dataOut_7" BEL
+        "cpu/registers/d/dataOut_6" BEL "cpu/registers/d/dataOut_5" BEL
+        "cpu/registers/d/dataOut_4" BEL "cpu/registers/d/dataOut_3" BEL
+        "cpu/registers/d/dataOut_2" BEL "cpu/registers/d/dataOut_1" BEL
+        "cpu/registers/d/dataOut_0" BEL "cpu/registers/c/dataOut_7" BEL
+        "cpu/registers/c/dataOut_6" BEL "cpu/registers/c/dataOut_5" BEL
+        "cpu/registers/c/dataOut_4" BEL "cpu/registers/c/dataOut_3" BEL
+        "cpu/registers/c/dataOut_2" BEL "cpu/registers/c/dataOut_1" BEL
+        "cpu/registers/c/dataOut_0" BEL "cpu/registers/b/dataOut_7" BEL
+        "cpu/registers/b/dataOut_6" BEL "cpu/registers/b/dataOut_5" BEL
+        "cpu/registers/b/dataOut_4" BEL "cpu/registers/b/dataOut_3" BEL
+        "cpu/registers/b/dataOut_2" BEL "cpu/registers/b/dataOut_1" BEL
+        "cpu/registers/b/dataOut_0" BEL "cpu/ialu/result_7" BEL
+        "cpu/ialu/result_6" BEL "cpu/ialu/result_5" BEL "cpu/ialu/result_4"
+        BEL "cpu/ialu/result_3" BEL "cpu/ialu/result_2" BEL
+        "cpu/ialu/result_1" BEL "cpu/ialu/result_0" BEL "cpu/regSelector_1"
+        BEL "cpu/regSelector_0" BEL "cpu/regSelector_6" BEL
+        "cpu/regSelector_5" BEL "cpu/regSelector_4" BEL "cpu/regSelector_3"
+        BEL "cpu/regSelector_2" BEL "cpu/tempReg1_6" BEL "cpu/tempReg1_5" BEL
+        "cpu/tempReg1_4" BEL "cpu/tempReg1_3" BEL "cpu/tempReg1_2" BEL
+        "cpu/tempReg1_1" BEL "cpu/tempReg1_7" BEL "cpu/tempReg1_0" BEL
+        "cpu/tempReg2_7" BEL "cpu/tempReg2_6" BEL "cpu/tempReg2_5" BEL
+        "cpu/tempReg2_4" BEL "cpu/tempReg2_3" BEL "cpu/tempReg2_2" BEL
+        "cpu/tempReg2_1" BEL "cpu/tempReg2_0" BEL "cpuDataIn_7_1" BEL
+        "cpuDataIn_6_1" BEL "cpuDataIn_3_1" BEL "cpuDataIn_0_1" BEL
+        "cpuDataIn_1_1" BEL "cpuDataIn_2_1" BEL "cpuDataIn_7_2" BEL
+        "cpuDataIn_5_1" BEL "cpuDataIn_6_2" BEL "cpuDataIn_4_1" BEL
+        "cpuDataIn_3_2" BEL "cpuDataIn_0_2" BEL "cpuDataIn_1_2" BEL
+        "cpuDataIn_2_2" BEL "cpuDataIn_6_3" BEL "cpuDataIn_7_3" BEL
+        "cpuDataIn_5_2" BEL "cpuDataIn_4_2" BEL "cpuDataIn_1_3" BEL
+        "cpuDataIn_0_3" BEL "cpuDataIn_2_3" BEL "cpuDataIn_3_3" BEL
+        "cpuDataIn_6_4" BEL "cpuDataIn_7_4" BEL "cpuDataIn_4_3" BEL
+        "dataBusReady_1" BEL "cpuDataIn_0_4" BEL "cpuDataIn_1_4" PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<26>"
+        PIN
+        "readWriteMemory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram_pins<26>"
+        PIN
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>"
+        PIN
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>"
+        PIN
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>"
+        PIN
+        "invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram_pins<28>";
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+PIN
+        videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>
+        = BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram"
+        PINNAME CLKBRDCLK;
+TIMEGRP allClocks_clkout3 = BEL "allClocks/clkout4_buf" BEL
+        "videoController/vindex_7" BEL "videoController/vindex_6" BEL
+        "videoController/vindex_5" BEL "videoController/vindex_4" BEL
+        "videoController/vindex_3" BEL "videoController/vindex_2" BEL
+        "videoController/vindex_1" BEL "videoController/vindex_0" BEL
+        "videoController/vcount_9" BEL "videoController/vcount_8" BEL
+        "videoController/vcount_7" BEL "videoController/vcount_6" BEL
+        "videoController/vcount_5" BEL "videoController/vcount_4" BEL
+        "videoController/vcount_3" BEL "videoController/vcount_2" BEL
+        "videoController/vcount_1" BEL "videoController/vcount_0" BEL
+        "videoController/hcount_9" BEL "videoController/hcount_8" BEL
+        "videoController/hcount_7" BEL "videoController/hcount_6" BEL
+        "videoController/hcount_5" BEL "videoController/hcount_4" BEL
+        "videoController/hcount_3" BEL "videoController/hcount_2" BEL
+        "videoController/hcount_1" BEL "videoController/hcount_0" BEL
+        "videoController/hindex_7" BEL "videoController/hindex_6" BEL
+        "videoController/hindex_5" BEL "videoController/hindex_4" BEL
+        "videoController/hindex_3" BEL "videoController/hindex_2" BEL
+        "videoController/hindex_1" BEL "videoController/hindex_0" BEL
+        "videoController/blue_0" BEL "videoController/hsync" BEL
+        "videoController/vsync" BEL "videoController/green_0" BEL
+        "videoController/red_0" BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_0"
+        BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_1"
+        BEL
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/sel_pipe_2"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>"
+        PIN
+        "videoRam/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/TRUE_DP.PRIM9.ram_pins<27>";
+PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0> = BEL
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0" PINNAME DIVCLK;
+PIN allClocks/pll_base_inst/PLL_ADV_pins<2> = BEL
+        "allClocks/pll_base_inst/PLL_ADV" PINNAME CLKIN1;
+TIMEGRP clk = PIN "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0>" PIN
+        "allClocks/pll_base_inst/PLL_ADV_pins<2>";
+NET "allClocks/clkin1" PERIOD = 31.25 ns HIGH 50%;
+TS_CLK_IN1 = PERIOD TIMEGRP "clk" 31.25 ns HIGH 50% INPUT_JITTER 0.3125 ns;
+TS_allClocks_clkout0 = PERIOD TIMEGRP "allClocks_clkout0" TS_CLK_IN1 / 0.3125
+        HIGH 50% INPUT_JITTER 0.3125 ns;
+TS_allClocks_clkout3 = PERIOD TIMEGRP "allClocks_clkout3" TS_CLK_IN1 / 0.78125
+        HIGH 50% INPUT_JITTER 0.3125 ns;
+SCHEMATIC END;
+

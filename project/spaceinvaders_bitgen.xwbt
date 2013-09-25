@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/chris/src/fpga-space-invaders/project/spaceinvaders.ncd
+OUTFILE=/home/chris/src/fpga-space-invaders/project/spaceinvaders.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=/home/chris/src/fpga-space-invaders/project
+LICENSE=WebPack
+USER_INFO=210775458_0_0_774

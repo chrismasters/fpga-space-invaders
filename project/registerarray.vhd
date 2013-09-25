@@ -83,13 +83,13 @@ eIn <= dataIn(7 downto 0);
 hIn <= dataIn(15 downto 8) when selector(4) = '1' and selector(5) = '1' else dataIn(7 downto 0);
 lIn <= dataIn(7 downto 0);
 
-b: OneByteRegister PORT MAP(clk => clk, load => selector(0), dataIn => bIn, dataOut => bOut);
-c: OneByteRegister PORT MAP(clk => clk, load => selector(1), dataIn => cIn, dataOut => cOut);
-d: OneByteRegister PORT MAP(clk => clk, load => selector(2), dataIn => dIn, dataOut => dOut);
-e: OneByteRegister PORT MAP(clk => clk, load => selector(3), dataIn => eIn, dataOut => eOut);
-h: OneByteRegister PORT MAP(clk => clk, load => selector(4), dataIn => hIn, dataOut => hOut);
-l: OneByteRegister PORT MAP(clk => clk, load => selector(5), dataIn => lIn, dataOut => lOut);
-sp: DoubleByteRegister PORT MAP(clk => clk, load => selector(6), dataIn => dataIn, dataOut => spOut);
+b: OneByteRegister PORT MAP(clk => clk, load => load and selector(0), dataIn => bIn, dataOut => bOut);
+c: OneByteRegister PORT MAP(clk => clk, load => load and selector(1), dataIn => cIn, dataOut => cOut);
+d: OneByteRegister PORT MAP(clk => clk, load => load and selector(2), dataIn => dIn, dataOut => dOut);
+e: OneByteRegister PORT MAP(clk => clk, load => load and selector(3), dataIn => eIn, dataOut => eOut);
+h: OneByteRegister PORT MAP(clk => clk, load => load and selector(4), dataIn => hIn, dataOut => hOut);
+l: OneByteRegister PORT MAP(clk => clk, load => load and selector(5), dataIn => lIn, dataOut => lOut);
+sp: DoubleByteRegister PORT MAP(clk => clk, load => load and selector(6), dataIn => dataIn, dataOut => spOut);
 --pc: DoubleByteRegister PORT MAP(clk => clk, load => load(7), dataIn => dataIn, dataOut => pcOut);
 
 end Behavioral;

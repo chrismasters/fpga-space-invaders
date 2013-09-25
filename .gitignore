@@ -2,6 +2,7 @@
 
 # exclude rom contents - you'll have to do this yourself!
 rom.mif 
+project/**/rom.mif
  
 *.log
 *.svf

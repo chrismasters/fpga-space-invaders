@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: i8080.prj
@@ -102,6 +102,9 @@ DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
 =========================================================================
 
 
@@ -120,6 +123,9 @@ Parsing architecture <Behavioral> of entity <registerarray>.
 Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/i8080opcodes.vhd" into library work
 Parsing package <opcodes>.
 Parsing package body <opcodes>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/alu.vhd" into library work
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
 Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/i8080.vhd" into library work
 Parsing entity <i8080>.
 Parsing architecture <Behavioral> of entity <i8080>.
@@ -135,9 +141,8 @@ Elaborating entity <RegisterArray> (architecture <Behavioral>) from library <wor
 Elaborating entity <OneByteRegister> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <DoubleByteRegister> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" Line 135. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" Line 328. Case statement is complete. others clause is never selected
-WARNING:Xst:2972 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 78. All outputs of instance <registers> of block <RegisterArray> are unconnected in block <i8080>. Underlying logic will be removed.
+
+Elaborating entity <alu> (architecture <Behavioral>) from library <work>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -147,88 +152,142 @@ Synthesizing Unit <i8080>.
     Related source file is "/home/chris/src/fpga-space-invaders/project/i8080.vhd".
 WARNING:Xst:647 - Input <hold> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <int> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 143: Output port <carryOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 143: Output port <zeroOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 143: Output port <signOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 143: Output port <parityOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 143: Output port <auxCarryOut> of the instance <ialu> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <pc>.
-    Found 4-bit register for signal <currentState>.
+    Found 4-bit register for signal <status>.
+    Found 7-bit register for signal <currentState>.
+    Found 1-bit register for signal <regLoad>.
     Found 16-bit register for signal <addressBus>.
     Found 1-bit register for signal <dataBusIn>.
+    Found 8-bit register for signal <regSelector>.
     Found 1-bit register for signal <waitAck>.
-    Found 8-bit register for signal <opcode>.
+    Found 8-bit register for signal <procloop.opcode>.
+    Found 3-bit register for signal <aluOpSelect>.
+    Found 7-bit register for signal <readMemReturnState>.
+    Found 1-bit register for signal <flagsParity>.
+    Found 1-bit register for signal <flagsAuxCarry>.
+    Found 1-bit register for signal <flagsSign>.
+    Found 1-bit register for signal <flagsZero>.
+    Found 8-bit register for signal <a>.
+    Found 8-bit register for signal <tempReg1>.
+    Found 1-bit register for signal <flagsCarry>.
+    Found 8-bit register for signal <aluOperandA>.
+    Found 1-bit register for signal <aluCarryIn>.
+    Found 8-bit register for signal <tempReg2>.
     Found 32-bit register for signal <procloop.waitCycleCount>.
-    Found finite state machine <FSM_0> for signal <currentState>.
-    -----------------------------------------------------------------------
-    | States             | 10                                             |
-    | Transitions        | 27                                             |
-    | Inputs             | 15                                             |
-    | Outputs            | 4                                              |
-    | Clock              | clk (rising_edge)                              |
-    | Reset              | reset (positive)                               |
-    | Reset type         | asynchronous                                   |
-    | Reset State        | fetch0                                         |
-    | Power Up State     | fetch0                                         |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 32-bit adder for signal <procloop.waitCycleCount[31]_GND_6_o_add_107_OUT> created at line 291.
-    Found 16-bit adder for signal <pc[15]_GND_6_o_add_117_OUT> created at line 312.
+    Found 16-bit register for signal <regDataIn>.
+    Found 8-bit register for signal <dataOut>.
+    Found 1-bit register for signal <wr>.
+    Found 8-bit register for signal <aluOperandB>.
+    Found 8-bit adder for signal <a[7]_GND_8_o_add_40_OUT> created at line 178.
+    Found 8-bit adder for signal <a[7]_GND_8_o_add_72_OUT> created at line 338.
+    Found 16-bit adder for signal <pc[15]_GND_8_o_add_283_OUT> created at line 506.
+    Found 16-bit adder for signal <regDataOut[15]_tempReg2[7]_add_289_OUT> created at line 542.
+    Found 32-bit adder for signal <procloop.waitCycleCount[31]_GND_8_o_add_292_OUT> created at line 548.
+    Found 16-bit adder for signal <tempReg2[7]_GND_8_o_add_300_OUT> created at line 623.
+    Found 16-bit adder for signal <regDataOut[15]_GND_8_o_add_310_OUT> created at line 673.
+    Found 16-bit adder for signal <regDataOut[15]_GND_8_o_add_319_OUT> created at line 178.
+    Found 8-bit adder for signal <dataIn[7]_GND_8_o_add_334_OUT> created at line 178.
+    Found 4-bit adder for signal <a[7]_GND_8_o_add_352_OUT> created at line 759.
+    Found 8-bit subtractor for signal <a[7]_GND_8_o_sub_46_OUT<7:0>> created at line 189.
+    Found 16-bit subtractor for signal <regDataOut[15]_GND_8_o_sub_330_OUT<15:0>> created at line 189.
+    Found 8-bit subtractor for signal <dataIn[7]_GND_8_o_sub_340_OUT<7:0>> created at line 189.
+    Found 16-bit subtractor for signal <regDataOut[15]_GND_8_o_sub_384_OUT<15:0>> created at line 837.
+    Found 8x8-bit Read Only RAM for signal <procloop.opcode[5]_GND_8_o_wide_mux_389_OUT>
+    Found 4x16-bit Read Only RAM for signal <_n4388>
+    Found 7-bit 4-to-1 multiplexer for signal <GND_8_o_PWR_8_o_mux_172_OUT> created at line 227.
+    Found 4-bit comparator greater for signal <a[3]_PWR_8_o_LessThan_72_o> created at line 337
+    Found 4-bit comparator greater for signal <a[7]_PWR_8_o_LessThan_352_o> created at line 758
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  74 D-type flip-flop(s).
-	inferred   7 Multiplexer(s).
-	inferred   1 Finite State Machine(s).
+	inferred   2 RAM(s).
+	inferred  14 Adder/Subtractor(s).
+	inferred 175 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred 251 Multiplexer(s).
 Unit <i8080> synthesized.
+
+Synthesizing Unit <RegisterArray>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/registerarray.vhd".
+WARNING:Xst:647 - Input <load> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred  14 Multiplexer(s).
+Unit <RegisterArray> synthesized.
 
 Synthesizing Unit <OneByteRegister>.
     Related source file is "/home/chris/src/fpga-space-invaders/project/onebyteregister.vhd".
-    Found 1-bit register for signal <dataOut<7>>.
-    Found 1-bit register for signal <dataOut<6>>.
-    Found 1-bit register for signal <dataOut<5>>.
-    Found 1-bit register for signal <dataOut<4>>.
-    Found 1-bit register for signal <dataOut<3>>.
-    Found 1-bit register for signal <dataOut<2>>.
-    Found 1-bit register for signal <dataOut<1>>.
-    Found 1-bit register for signal <dataOut<0>>.
+    Found 8-bit register for signal <dataOut>.
     Summary:
 	inferred   8 D-type flip-flop(s).
 Unit <OneByteRegister> synthesized.
 
 Synthesizing Unit <DoubleByteRegister>.
     Related source file is "/home/chris/src/fpga-space-invaders/project/doublebyteregister.vhd".
-    Found 1-bit register for signal <dataOut<15>>.
-    Found 1-bit register for signal <dataOut<14>>.
-    Found 1-bit register for signal <dataOut<13>>.
-    Found 1-bit register for signal <dataOut<12>>.
-    Found 1-bit register for signal <dataOut<11>>.
-    Found 1-bit register for signal <dataOut<10>>.
-    Found 1-bit register for signal <dataOut<9>>.
-    Found 1-bit register for signal <dataOut<8>>.
-    Found 1-bit register for signal <dataOut<7>>.
-    Found 1-bit register for signal <dataOut<6>>.
-    Found 1-bit register for signal <dataOut<5>>.
-    Found 1-bit register for signal <dataOut<4>>.
-    Found 1-bit register for signal <dataOut<3>>.
-    Found 1-bit register for signal <dataOut<2>>.
-    Found 1-bit register for signal <dataOut<1>>.
-    Found 1-bit register for signal <dataOut<0>>.
+    Found 16-bit register for signal <dataOut>.
     Summary:
 	inferred  16 D-type flip-flop(s).
 Unit <DoubleByteRegister> synthesized.
+
+Synthesizing Unit <alu>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/alu.vhd".
+    Found 1-bit register for signal <carryOut>.
+    Found 9-bit register for signal <procloop.tempResult>.
+    Found 8-bit register for signal <result>.
+    Found 1-bit register for signal <zeroOut>.
+    Found 1-bit register for signal <signOut>.
+    Found 1-bit register for signal <parityOut>.
+    Found 9-bit adder for signal <n0069> created at line 36.
+    Found 9-bit adder for signal <operandA[7]_GND_13_o_add_2_OUT> created at line 1253.
+    Found 9-bit subtractor for signal <operandA[7]_operandB[7]_sub_6_OUT<8:0>> created at line 47.
+    Found 9-bit subtractor for signal <operandA[7]_GND_13_o_sub_7_OUT<8:0>> created at line 1320.
+    WARNING:Xst:2404 -  FFs/Latches <auxCarryOut<0:0>> (without init value) have a constant value of 0 in block <alu>.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <alu> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
- 16-bit adder                                          : 1
+# RAMs                                                 : 2
+ 4x16-bit single-port Read Only RAM                    : 1
+ 8x8-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 18
+ 16-bit adder                                          : 5
+ 16-bit subtractor                                     : 2
  32-bit adder                                          : 1
-# Registers                                            : 6
- 1-bit register                                        : 2
- 16-bit register                                       : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 3
+ 8-bit subtractor                                      : 2
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 2
+# Registers                                            : 39
+ 1-bit register                                        : 14
+ 16-bit register                                       : 4
+ 3-bit register                                        : 1
  32-bit register                                       : 1
- 8-bit register                                        : 1
-# Multiplexers                                         : 7
- 1-bit 2-to-1 multiplexer                              : 4
- 32-bit 2-to-1 multiplexer                             : 3
-# FSMs                                                 : 1
+ 4-bit register                                        : 1
+ 7-bit register                                        : 2
+ 8-bit register                                        : 15
+ 9-bit register                                        : 1
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 274
+ 1-bit 2-to-1 multiplexer                              : 80
+ 16-bit 2-to-1 multiplexer                             : 52
+ 32-bit 2-to-1 multiplexer                             : 1
+ 7-bit 2-to-1 multiplexer                              : 77
+ 7-bit 4-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 60
+ 9-bit 2-to-1 multiplexer                              : 3
+# Xors                                                 : 5
+ 1-bit xor8                                            : 4
+ 8-bit xor2                                            : 1
 
 =========================================================================
 
@@ -238,51 +297,108 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <i8080>.
-The following registers are absorbed into counter <pc>: 1 register on signal <pc>.
+The following registers are absorbed into counter <procloop.waitCycleCount>: 1 register on signal <procloop.waitCycleCount>.
+INFO:Xst:3231 - The small RAM <Mram_procloop.opcode[5]_GND_8_o_wide_mux_389_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <procloop.opcode<5:3>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram__n4388> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <procloop.opcode<5:4>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <i8080> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
- 32-bit adder                                          : 1
+# RAMs                                                 : 2
+ 4x16-bit single-port distributed Read Only RAM        : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 11
+ 16-bit adder                                          : 4
+ 16-bit subtractor                                     : 1
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 2
 # Counters                                             : 1
- 16-bit up counter                                     : 1
-# Registers                                            : 58
- Flip-Flops                                            : 58
-# Multiplexers                                         : 7
- 1-bit 2-to-1 multiplexer                              : 4
- 32-bit 2-to-1 multiplexer                             : 3
-# FSMs                                                 : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 228
+ Flip-Flops                                            : 228
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 273
+ 1-bit 2-to-1 multiplexer                              : 80
+ 16-bit 2-to-1 multiplexer                             : 52
+ 7-bit 2-to-1 multiplexer                              : 77
+ 7-bit 4-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 60
+ 9-bit 2-to-1 multiplexer                              : 3
+# Xors                                                 : 5
+ 1-bit xor8                                            : 4
+ 8-bit xor2                                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <currentState[1:4]> with user encoding.
---------------------
- State  | Encoding
---------------------
- fetch0 | 0000
- fetch1 | 0001
- decode | 0010
- dad1   | 0011
- dad2   | 0100
- lxi1   | 0101
- lxi2   | 0110
- lxi3   | 0111
- lxi4   | 1000
- lxi5   | 1001
---------------------
+INFO:Xst:2261 - The FF/Latch <procloop.tempResult_7> in Unit <alu> is equivalent to the following FF/Latch, which will be removed : <signOut> 
+INFO:Xst:2261 - The FF/Latch <procloop.opcode_3> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <aluOpSelect_0> 
+INFO:Xst:2261 - The FF/Latch <procloop.opcode_4> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <aluOpSelect_1> 
+INFO:Xst:2261 - The FF/Latch <procloop.opcode_5> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <aluOpSelect_2> 
+INFO:Xst:2261 - The FF/Latch <status_2> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <status_3> 
+WARNING:Xst:1293 - FF/Latch <readMemReturnState_6> has a constant value of 0 in block <i8080>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <regSelector_7> (without init value) has a constant value of 0 in block <i8080>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <DoubleByteRegister> ...
+
+Optimizing unit <OneByteRegister> ...
 
 Optimizing unit <i8080> ...
 
+Optimizing unit <RegisterArray> ...
+
+Optimizing unit <alu> ...
+WARNING:Xst:2677 - Node <regLoad> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/carryOut> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/parityOut> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/zeroOut> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_8> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_7> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_6> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_5> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_4> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_3> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_2> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_1> of sequential type is unconnected in block <i8080>.
+WARNING:Xst:2677 - Node <ialu/procloop.tempResult_0> of sequential type is unconnected in block <i8080>.
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block i8080, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block i8080, actual ratio is 18.
+FlipFlop regSelector_0 has been replicated 3 time(s)
+FlipFlop regSelector_1 has been replicated 3 time(s)
+FlipFlop regSelector_2 has been replicated 2 time(s)
+FlipFlop regSelector_3 has been replicated 2 time(s)
+FlipFlop regSelector_4 has been replicated 3 time(s)
+FlipFlop regSelector_5 has been replicated 3 time(s)
+FlipFlop regSelector_6 has been replicated 3 time(s)
 
 Final Macro Processing ...
 
@@ -290,8 +406,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 78
- Flip-Flops                                            : 78
+# Registers                                            : 259
+ Flip-Flops                                            : 259
 
 =========================================================================
 
@@ -314,28 +430,29 @@ Top Level Output File Name         : i8080.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 203
+# BELS                             : 1207
 #      GND                         : 1
-#      INV                         : 3
-#      LUT1                        : 46
-#      LUT2                        : 2
-#      LUT3                        : 1
-#      LUT4                        : 4
-#      LUT5                        : 4
-#      LUT6                        : 47
-#      MUXCY                       : 46
+#      INV                         : 4
+#      LUT1                        : 30
+#      LUT2                        : 88
+#      LUT3                        : 68
+#      LUT4                        : 103
+#      LUT5                        : 178
+#      LUT6                        : 457
+#      MUXCY                       : 120
+#      MUXF7                       : 29
 #      VCC                         : 1
-#      XORCY                       : 48
-# FlipFlops/Latches                : 78
-#      FD                          : 2
-#      FDC                         : 4
-#      FDCE                        : 16
-#      FDE                         : 56
+#      XORCY                       : 128
+# FlipFlops/Latches                : 259
+#      FD                          : 8
+#      FDCE                        : 24
+#      FDE                         : 225
+#      FDPE                        : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 28
+# IO Buffers                       : 41
 #      IBUF                        : 10
-#      OBUF                        : 18
+#      OBUF                        : 31
 
 Device utilization summary:
 ---------------------------
@@ -344,20 +461,20 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              78  out of  11440     0%  
- Number of Slice LUTs:                  107  out of   5720     1%  
-    Number used as Logic:               107  out of   5720     1%  
+ Number of Slice Registers:             259  out of  11440     2%  
+ Number of Slice LUTs:                  928  out of   5720    16%  
+    Number used as Logic:               928  out of   5720    16%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    130
-   Number with an unused Flip Flop:      52  out of    130    40%  
-   Number with an unused LUT:            23  out of    130    17%  
-   Number of fully used LUT-FF pairs:    55  out of    130    42%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:   1001
+   Number with an unused Flip Flop:     742  out of   1001    74%  
+   Number with an unused LUT:            73  out of   1001     7%  
+   Number of fully used LUT-FF pairs:   186  out of   1001    18%  
+   Number of unique control sets:        29
 
 IO Utilization: 
- Number of IOs:                          43
- Number of bonded IOBs:                  29  out of    102    28%  
+ Number of IOs:                          47
+ Number of bonded IOBs:                  42  out of    102    41%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -383,7 +500,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 78    |
+clk                                | BUFGP                  | 259   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -394,8 +511,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.923ns (Maximum Frequency: 168.833MHz)
-   Minimum input arrival time before clock: 5.525ns
+   Minimum period: 8.354ns (Maximum Frequency: 119.710MHz)
+   Minimum input arrival time before clock: 12.634ns
    Maximum output required time after clock: 4.162ns
    Maximum combinational path delay: No path found
 
@@ -405,65 +522,90 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.923ns (frequency: 168.833MHz)
-  Total number of paths / destination ports: 2305 / 142
+  Clock period: 8.354ns (frequency: 119.710MHz)
+  Total number of paths / destination ports: 93586 / 492
 -------------------------------------------------------------------------
-Delay:               5.923ns (Levels of Logic = 4)
-  Source:            procloop.waitCycleCount_21 (FF)
-  Destination:       procloop.waitCycleCount_0 (FF)
+Delay:               8.354ns (Levels of Logic = 22)
+  Source:            regSelector_2_1 (FF)
+  Destination:       regDataIn_15 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: procloop.waitCycleCount_21 to procloop.waitCycleCount_0
+  Data Path: regSelector_2_1 to regDataIn_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              3   0.525   1.221  procloop.waitCycleCount_21 (procloop.waitCycleCount_21)
-     LUT6:I0->O            1   0.254   1.112  _n0376_inv114 (_n0376_inv114)
-     LUT6:I1->O            3   0.254   0.766  _n0376_inv117 (_n0376_inv11)
-     LUT5:I4->O           17   0.254   1.209  _n0376_inv1_rstpot (_n0376_inv1_rstpot)
-     LUT6:I5->O            1   0.254   0.000  procloop.waitCycleCount_0_dpot (procloop.waitCycleCount_0_dpot)
-     FDE:D                     0.074          procloop.waitCycleCount_0
+     FDE:C->Q              4   0.525   1.080  regSelector_2_1 (regSelector_2_1)
+     LUT4:I0->O            1   0.254   0.682  registers/Mmux_dataOut181_SW16 (N321)
+     LUT4:I3->O           18   0.254   1.235  registers/Mmux_dataOut181 (registers/Mmux_dataOut181)
+     LUT5:I4->O            3   0.254   0.874  registers/Mmux_dataOut451_SW1 (N346)
+     LUT6:I4->O            1   0.250   0.000  registers/Mmux_dataOut451 (registers/Mmux_dataOut45)
+     MUXCY:S->O            1   0.215   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<0> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<1> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<2> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<3> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<4> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<5> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<6> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<7> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<8> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<9> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<10> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<11> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<12> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<13> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<14> (Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_cy<14>)
+     XORCY:CI->O           2   0.206   0.726  Msub_regDataOut[15]_GND_8_o_sub_384_OUT<15:0>_xor<15> (regDataOut[15]_GND_8_o_sub_384_OUT<15>)
+     LUT5:I4->O            1   0.254   0.910  Mmux_currentState[6]_X_8_o_wide_mux_427_OUT222 (Mmux_currentState[6]_X_8_o_wide_mux_427_OUT221)
+     LUT6:I3->O            1   0.235   0.000  Mmux_currentState[6]_X_8_o_wide_mux_427_OUT224 (currentState[6]_X_8_o_wide_mux_427_OUT<15>)
+     FDE:D                     0.074          regDataIn_15
     ----------------------------------------
-    Total                      5.923ns (1.615ns logic, 4.308ns route)
-                                       (27.3% logic, 72.7% route)
+    Total                      8.354ns (2.847ns logic, 5.507ns route)
+                                       (34.1% logic, 65.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 115 / 89
+  Total number of paths / destination ports: 11263 / 323
 -------------------------------------------------------------------------
-Offset:              5.525ns (Levels of Logic = 3)
-  Source:            reset (PAD)
-  Destination:       addressBus_0 (FF)
+Offset:              12.634ns (Levels of Logic = 10)
+  Source:            dataIn<3> (PAD)
+  Destination:       currentState_2 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to addressBus_0
+  Data Path: dataIn<3> to currentState_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            26   1.328   1.528  reset_IBUF (reset_IBUF)
-     LUT2:I0->O            1   0.250   0.682  _n0266_inv_SW0 (N01)
-     LUT6:I5->O           16   0.254   1.181  _n0266_inv (_n0266_inv)
-     FDE:CE                    0.302          addressBus_0
+     IBUF:I->O            66   1.328   2.400  dataIn_3_IBUF (dataIn_3_IBUF)
+     LUT6:I0->O            7   0.254   0.910  dataIn[7]_PWR_8_o_equal_105_o<7>11 (dataIn[7]_PWR_8_o_equal_105_o<7>1)
+     LUT6:I5->O           10   0.254   1.284  dataIn[7]_dataIn[2]_OR_37_o1 (dataIn[7]_dataIn[2]_OR_37_o)
+     LUT5:I1->O            1   0.254   0.910  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2619_SW0 (N431)
+     LUT6:I3->O            1   0.235   1.137  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2619 (Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2618)
+     LUT6:I0->O            1   0.254   0.790  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2620_SW0 (N433)
+     LUT6:I4->O            2   0.250   0.726  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2620 (Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2619)
+     LUT6:I5->O            1   0.254   0.000  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2623_G (N480)
+     MUXF7:I1->O           1   0.175   0.910  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2623 (Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2622)
+     LUT6:I3->O            1   0.235   0.000  Mmux_currentState[6]_X_8_o_wide_mux_407_OUT2624 (currentState[6]_X_8_o_wide_mux_407_OUT<2>)
+     FDCE:D                    0.074          currentState_2
     ----------------------------------------
-    Total                      5.525ns (2.134ns logic, 3.391ns route)
-                                       (38.6% logic, 61.4% route)
+    Total                     12.634ns (3.567ns logic, 9.067ns route)
+                                       (28.2% logic, 71.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 18 / 18
+  Total number of paths / destination ports: 31 / 31
 -------------------------------------------------------------------------
 Offset:              4.162ns (Levels of Logic = 1)
-  Source:            dataBusIn (FF)
-  Destination:       dataBusIn (PAD)
+  Source:            status_2 (FF)
+  Destination:       status<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: dataBusIn to dataBusIn
+  Data Path: status_2 to status<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.525   0.725  dataBusIn (dataBusIn_OBUF)
-     OBUF:I->O                 2.912          dataBusIn_OBUF (dataBusIn)
+     FDCE:C->Q             2   0.525   0.725  status_2 (status_2)
+     OBUF:I->O                 2.912          status_3_OBUF (status<3>)
     ----------------------------------------
     Total                      4.162ns (3.437ns logic, 0.725ns route)
                                        (82.6% logic, 17.4% route)
@@ -478,21 +620,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.923|         |         |         |
+clk            |    8.354|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 7.30 secs
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 18.96 secs
  
 --> 
 
 
-Total memory usage is 484448 kilobytes
+Total memory usage is 496120 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :   19 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

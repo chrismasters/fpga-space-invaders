@@ -1,0 +1,864 @@
+Release 14.6 - xst P.68d (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: spaceinvaders.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "spaceinvaders.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "spaceinvaders"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : spaceinvaders
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/ipcore_dir/clocks.vhd" into library work
+Parsing entity <clocks>.
+Parsing architecture <xilinx> of entity <clocks>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/ipcore_dir/rom.vhd" into library work
+Parsing entity <rom>.
+Parsing architecture <rom_a> of entity <rom>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/ipcore_dir/vram.vhd" into library work
+Parsing entity <vram>.
+Parsing architecture <vram_a> of entity <vram>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/ipcore_dir/ram.vhd" into library work
+Parsing entity <ram>.
+Parsing architecture <ram_a> of entity <ram>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/onebyteregister.vhd" into library work
+Parsing entity <OneByteRegister>.
+Parsing architecture <Behavioral> of entity <onebyteregister>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/doublebyteregister.vhd" into library work
+Parsing entity <DoubleByteRegister>.
+Parsing architecture <Behavioral> of entity <doublebyteregister>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" into library work
+Parsing entity <RegisterArray>.
+Parsing architecture <Behavioral> of entity <registerarray>.
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 86: Actual for formal port load is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 87: Actual for formal port load is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 88: Actual for formal port load is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 89: Actual for formal port load is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 90: Actual for formal port load is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 91: Actual for formal port load is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/chris/src/fpga-space-invaders/project/registerarray.vhd" Line 92: Actual for formal port load is neither a static name nor a globally static expression
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/i8080opcodes.vhd" into library work
+Parsing package <opcodes>.
+Parsing package body <opcodes>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/alu.vhd" into library work
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/video.vhd" into library work
+Parsing entity <video>.
+Parsing architecture <Behavioral> of entity <video>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/i8080.vhd" into library work
+Parsing entity <i8080>.
+Parsing architecture <Behavioral> of entity <i8080>.
+Parsing VHDL file "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" into library work
+Parsing entity <spaceinvaders>.
+Parsing architecture <Behavioral> of entity <spaceinvaders>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <spaceinvaders> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" Line 35: Using initial value '0' for cpuint since it is never assigned
+WARNING:HDLCompiler:871 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" Line 36: Using initial value '0' for cpuhold since it is never assigned
+
+Elaborating entity <video> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <clocks> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <vram> (architecture <vram_a>) from library <work>.
+
+Elaborating entity <ram> (architecture <ram_a>) from library <work>.
+
+Elaborating entity <rom> (architecture <rom_a>) from library <work>.
+
+Elaborating entity <i8080> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <RegisterArray> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <OneByteRegister> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <DoubleByteRegister> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <alu> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <spaceinvaders>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd".
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 215: Output port <clk133mhz> of the instance <allClocks> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 215: Output port <clk133mhzinv> of the instance <allClocks> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 222: Output port <douta> of the instance <videoRam> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 246: Output port <sync> of the instance <cpu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 246: Output port <waitAck> of the instance <cpu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 246: Output port <hlda> of the instance <cpu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/spaceinvaders.vhd" line 246: Output port <inte> of the instance <cpu> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ramWea>.
+    Found 13-bit register for signal <vramAddrA>.
+    Found 10-bit register for signal <ramAddr>.
+    Found 13-bit register for signal <romAddr>.
+    Found 2-bit register for signal <memState>.
+    Found 1-bit register for signal <dataBusReady>.
+    Found 8-bit register for signal <cpuDataIn>.
+    Found 8-bit register for signal <vramDataInA>.
+    Found 8-bit register for signal <ramDataIn>.
+    Found 1-bit register for signal <vramWea>.
+    Found finite state machine <FSM_0> for signal <memState>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk10mhz (falling_edge)                        |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 13-bit subtractor for signal <GND_6_o_GND_6_o_sub_2_OUT<12:0>> created at line 158.
+    Found 16-bit comparator greater for signal <addressBus[15]_GND_6_o_LessThan_12_o> created at line 176
+    Found 16-bit comparator greater for signal <addressBus[15]_GND_6_o_LessThan_13_o> created at line 178
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  63 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spaceinvaders> synthesized.
+
+Synthesizing Unit <video>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/video.vhd".
+    Found 8-bit register for signal <hindex>.
+    Found 10-bit register for signal <vcount>.
+    Found 8-bit register for signal <vindex>.
+    Found 1-bit register for signal <vsync>.
+    Found 1-bit register for signal <hsync>.
+    Found 4-bit register for signal <red>.
+    Found 4-bit register for signal <green>.
+    Found 4-bit register for signal <blue>.
+    Found 10-bit register for signal <hcount>.
+    Found 10-bit adder for signal <vcount[9]_GND_8_o_add_3_OUT> created at line 1241.
+    Found 10-bit adder for signal <hcount[9]_GND_8_o_add_10_OUT> created at line 1241.
+    Found 8-bit adder for signal <hindex[7]_GND_8_o_add_39_OUT> created at line 1241.
+    Found 8-bit subtractor for signal <GND_8_o_GND_8_o_sub_7_OUT<7:0>> created at line 1308.
+    Found 1-bit 8-to-1 multiplexer for signal <colourOutput_vindex[2]_AND_10_o> created at line 69.
+    Found 10-bit comparator lessequal for signal <n0013> created at line 58
+    Found 10-bit comparator greater for signal <vcount[9]_GND_8_o_LessThan_17_o> created at line 58
+    Found 10-bit comparator lessequal for signal <n0018> created at line 63
+    Found 10-bit comparator greater for signal <hcount[9]_PWR_9_o_LessThan_19_o> created at line 63
+    Found 10-bit comparator greater for signal <GND_8_o_vcount[9]_LessThan_20_o> created at line 68
+    Found 10-bit comparator greater for signal <vcount[9]_GND_8_o_LessThan_21_o> created at line 68
+    Found 10-bit comparator greater for signal <GND_8_o_hcount[9]_LessThan_22_o> created at line 68
+    Found 10-bit comparator greater for signal <hcount[9]_GND_8_o_LessThan_23_o> created at line 68
+    Found 10-bit comparator greater for signal <GND_8_o_vcount[9]_LessThan_25_o> created at line 70
+    Found 10-bit comparator greater for signal <vcount[9]_GND_8_o_LessThan_26_o> created at line 70
+    Found 10-bit comparator greater for signal <GND_8_o_hcount[9]_LessThan_28_o> created at line 71
+    Found 10-bit comparator greater for signal <hcount[9]_GND_8_o_LessThan_29_o> created at line 71
+    Found 10-bit comparator greater for signal <GND_8_o_vcount[9]_LessThan_30_o> created at line 75
+    Found 10-bit comparator greater for signal <vcount[9]_GND_8_o_LessThan_31_o> created at line 75
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  50 D-type flip-flop(s).
+	inferred  14 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <video> synthesized.
+
+Synthesizing Unit <clocks>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/ipcore_dir/clocks.vhd".
+    Summary:
+	no macro.
+Unit <clocks> synthesized.
+
+Synthesizing Unit <i8080>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/i8080.vhd".
+WARNING:Xst:647 - Input <hold> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <int> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 150: Output port <carryOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 150: Output port <zeroOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 150: Output port <signOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 150: Output port <parityOut> of the instance <ialu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/chris/src/fpga-space-invaders/project/i8080.vhd" line 150: Output port <auxCarryOut> of the instance <ialu> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <sync> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <hlda> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 16-bit register for signal <pc>.
+    Found 8-bit register for signal <dataOut>.
+    Found 4-bit register for signal <status>.
+    Found 7-bit register for signal <currentState>.
+    Found 1-bit register for signal <regLoad>.
+    Found 1-bit register for signal <wr>.
+    Found 16-bit register for signal <addressBus>.
+    Found 1-bit register for signal <dataBusIn>.
+    Found 8-bit register for signal <regSelector>.
+    Found 1-bit register for signal <waitAck>.
+    Found 8-bit register for signal <procloop.opcode>.
+    Found 3-bit register for signal <aluOpSelect>.
+    Found 7-bit register for signal <readMemReturnState>.
+    Found 8-bit register for signal <a>.
+    Found 8-bit register for signal <tempReg1>.
+    Found 1-bit register for signal <flagsCarry>.
+    Found 8-bit register for signal <aluOperandA>.
+    Found 1-bit register for signal <aluCarryIn>.
+    Found 8-bit register for signal <tempReg2>.
+    Found 1-bit register for signal <intEnabled>.
+    Found 32-bit register for signal <procloop.waitCycleCount>.
+    Found 16-bit register for signal <regDataIn>.
+    Found 1-bit register for signal <flagsZero>.
+    Found 8-bit register for signal <aluOperandB>.
+    Found 1-bit register for signal <flagsSign>.
+    Found 1-bit register for signal <flagsAuxCarry>.
+    Found 1-bit register for signal <flagsParity>.
+    Found 8-bit adder for signal <a[7]_GND_26_o_add_42_OUT> created at line 357.
+    Found 8-bit adder for signal <a[7]_GND_26_o_add_68_OUT> created at line 394.
+    Found 16-bit adder for signal <pc[15]_GND_26_o_add_329_OUT> created at line 584.
+    Found 16-bit adder for signal <regDataOut[15]_tempReg2[7]_add_335_OUT> created at line 620.
+    Found 32-bit adder for signal <procloop.waitCycleCount[31]_GND_26_o_add_338_OUT> created at line 627.
+    Found 16-bit adder for signal <tempReg2[7]_GND_26_o_add_348_OUT> created at line 707.
+    Found 8-bit adder for signal <regDataOut[7]_GND_26_o_add_361_OUT> created at line 768.
+    Found 4-bit adder for signal <a[7]_GND_26_o_add_373_OUT> created at line 845.
+    Found 16-bit adder for signal <regDataOut[15]_GND_26_o_add_420_OUT> created at line 1013.
+    Found 16-bit adder for signal <regDataOut[15]_GND_26_o_add_424_OUT> created at line 1020.
+    Found 8-bit subtractor for signal <a[7]_GND_26_o_sub_44_OUT<7:0>> created at line 359.
+    Found 8-bit subtractor for signal <regDataOut[7]_GND_26_o_sub_363_OUT<7:0>> created at line 770.
+    Found 16-bit subtractor for signal <regDataOut[15]_GND_26_o_sub_436_OUT<15:0>> created at line 1063.
+    Found 16-bit subtractor for signal <regDataOut[15]_GND_26_o_sub_437_OUT<15:0>> created at line 1073.
+    Found 8x8-bit Read Only RAM for signal <procloop.opcode[5]_GND_26_o_wide_mux_415_OUT>
+    Found 4x16-bit Read Only RAM for signal <_n4753>
+    Found 7-bit 4-to-1 multiplexer for signal <GND_26_o_PWR_19_o_mux_219_OUT> created at line 283.
+    Found 4-bit comparator greater for signal <a[3]_PWR_19_o_LessThan_68_o> created at line 393
+    Found 4-bit comparator greater for signal <a[7]_PWR_19_o_LessThan_373_o> created at line 844
+    Summary:
+	inferred   2 RAM(s).
+	inferred  12 Adder/Subtractor(s).
+	inferred 176 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred 305 Multiplexer(s).
+Unit <i8080> synthesized.
+
+Synthesizing Unit <RegisterArray>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/registerarray.vhd".
+    Summary:
+	inferred  14 Multiplexer(s).
+Unit <RegisterArray> synthesized.
+
+Synthesizing Unit <OneByteRegister>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/onebyteregister.vhd".
+    Found 8-bit register for signal <dataOut>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <OneByteRegister> synthesized.
+
+Synthesizing Unit <DoubleByteRegister>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/doublebyteregister.vhd".
+    Found 16-bit register for signal <dataOut>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <DoubleByteRegister> synthesized.
+
+Synthesizing Unit <alu>.
+    Related source file is "/home/chris/src/fpga-space-invaders/project/alu.vhd".
+    Found 1-bit register for signal <carryOut>.
+    Found 8-bit register for signal <result>.
+    Found 1-bit register for signal <zeroOut>.
+    Found 1-bit register for signal <signOut>.
+    Found 1-bit register for signal <parityOut>.
+    Found 9-bit adder for signal <n0080> created at line 37.
+    Found 9-bit adder for signal <operandA[7]_GND_30_o_add_2_OUT> created at line 1253.
+    Found 9-bit subtractor for signal <operandA[7]_GND_30_o_sub_7_OUT<8:0>> created at line 1320.
+    Found 9-bit subtractor for signal <operandA[7]_operandB[7]_sub_18_OUT<8:0>> created at line 65.
+    WARNING:Xst:2404 -  FFs/Latches <auxCarryOut<0:0>> (without init value) have a constant value of 0 in block <alu>.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  12 D-type flip-flop(s).
+	inferred  14 Multiplexer(s).
+Unit <alu> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 4x16-bit single-port Read Only RAM                    : 1
+ 8x8-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 21
+ 10-bit adder                                          : 2
+ 13-bit subtractor                                     : 1
+ 16-bit adder                                          : 5
+ 16-bit subtractor                                     : 2
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 2
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 2
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 2
+# Registers                                            : 57
+ 1-bit register                                        : 20
+ 10-bit register                                       : 3
+ 13-bit register                                       : 2
+ 16-bit register                                       : 4
+ 3-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 4
+ 7-bit register                                        : 2
+ 8-bit register                                        : 20
+# Comparators                                          : 18
+ 10-bit comparator greater                             : 12
+ 10-bit comparator lessequal                           : 2
+ 16-bit comparator greater                             : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 339
+ 1-bit 2-to-1 multiplexer                              : 97
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 58
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 90
+ 7-bit 4-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 81
+ 9-bit 2-to-1 multiplexer                              : 7
+# FSMs                                                 : 1
+# Xors                                                 : 2
+ 1-bit xor8                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/vram.ngc>.
+Reading core <ipcore_dir/ram.ngc>.
+Reading core <ipcore_dir/rom.ngc>.
+Loading core <vram> for timing and area information for instance <videoRam>.
+Loading core <ram> for timing and area information for instance <readWriteMemory>.
+Loading core <rom> for timing and area information for instance <invadersRom>.
+INFO:Xst:2261 - The FF/Latch <aluOpSelect_0> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <procloop.opcode_3> 
+INFO:Xst:2261 - The FF/Latch <aluOpSelect_1> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <procloop.opcode_4> 
+INFO:Xst:2261 - The FF/Latch <aluOpSelect_2> in Unit <cpu> is equivalent to the following FF/Latch, which will be removed : <procloop.opcode_5> 
+INFO:Xst:2261 - The FF/Latch <status_1> in Unit <cpu> is equivalent to the following 2 FFs/Latches, which will be removed : <status_2> <status_3> 
+INFO:Xst:2261 - The FF/Latch <red_0> in Unit <videoController> is equivalent to the following 3 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> 
+
+Synthesizing (advanced) Unit <i8080>.
+The following registers are absorbed into counter <procloop.waitCycleCount>: 1 register on signal <procloop.waitCycleCount>.
+INFO:Xst:3231 - The small RAM <Mram_procloop.opcode[5]_GND_26_o_wide_mux_415_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <procloop.opcode<5:3>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram__n4753> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <procloop.opcode<5:4>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <i8080> synthesized (advanced).
+
+Synthesizing (advanced) Unit <video>.
+The following registers are absorbed into counter <hcount>: 1 register on signal <hcount>.
+The following registers are absorbed into counter <hindex>: 1 register on signal <hindex>.
+The following registers are absorbed into counter <vcount>: 1 register on signal <vcount>.
+The following registers are absorbed into counter <vindex>: 1 register on signal <vindex>.
+Unit <video> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 4x16-bit single-port distributed Read Only RAM        : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 16
+ 13-bit subtractor                                     : 1
+ 16-bit adder                                          : 5
+ 16-bit subtractor                                     : 2
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 1
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 1
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 2
+# Counters                                             : 5
+ 10-bit up counter                                     : 2
+ 32-bit up counter                                     : 1
+ 8-bit down counter                                    : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 297
+ Flip-Flops                                            : 297
+# Comparators                                          : 18
+ 10-bit comparator greater                             : 12
+ 10-bit comparator lessequal                           : 2
+ 16-bit comparator greater                             : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 338
+ 1-bit 2-to-1 multiplexer                              : 97
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 58
+ 4-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 90
+ 7-bit 4-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 81
+ 9-bit 2-to-1 multiplexer                              : 7
+# FSMs                                                 : 1
+# Xors                                                 : 2
+ 1-bit xor8                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <aluOpSelect_0> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <procloop.opcode_3> 
+INFO:Xst:2261 - The FF/Latch <aluOpSelect_1> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <procloop.opcode_4> 
+INFO:Xst:2261 - The FF/Latch <aluOpSelect_2> in Unit <i8080> is equivalent to the following FF/Latch, which will be removed : <procloop.opcode_5> 
+INFO:Xst:2261 - The FF/Latch <status_1> in Unit <i8080> is equivalent to the following 2 FFs/Latches, which will be removed : <status_2> <status_3> 
+INFO:Xst:2261 - The FF/Latch <red_0> in Unit <video> is equivalent to the following 3 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <memState[1:2]> with user encoding.
+--------------------
+ State  | Encoding
+--------------------
+ idle   | 00
+ read0  | 01
+ read1  | 10
+ write0 | 11
+--------------------
+WARNING:Xst:1710 - FF/Latch <regSelector_7> (without init value) has a constant value of 0 in block <i8080>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance allClocks/pll_base_inst in unit allClocks/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <video> is equivalent to the following 3 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> 
+INFO:Xst:2261 - The FF/Latch <green_0> in Unit <video> is equivalent to the following 3 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> 
+
+Optimizing unit <DoubleByteRegister> ...
+
+Optimizing unit <OneByteRegister> ...
+
+Optimizing unit <spaceinvaders> ...
+
+Optimizing unit <i8080> ...
+
+Optimizing unit <RegisterArray> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <video> ...
+WARNING:Xst:2677 - Node <cpu/waitAck> of sequential type is unconnected in block <spaceinvaders>.
+WARNING:Xst:2677 - Node <cpu/intEnabled> of sequential type is unconnected in block <spaceinvaders>.
+WARNING:Xst:2677 - Node <cpu/ialu/parityOut> of sequential type is unconnected in block <spaceinvaders>.
+WARNING:Xst:2677 - Node <cpu/ialu/signOut> of sequential type is unconnected in block <spaceinvaders>.
+WARNING:Xst:2677 - Node <cpu/ialu/zeroOut> of sequential type is unconnected in block <spaceinvaders>.
+WARNING:Xst:2677 - Node <cpu/ialu/carryOut> of sequential type is unconnected in block <spaceinvaders>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block spaceinvaders, actual ratio is 23.
+FlipFlop cpuDataIn_0 has been replicated 3 time(s)
+FlipFlop cpuDataIn_1 has been replicated 4 time(s)
+FlipFlop cpuDataIn_2 has been replicated 3 time(s)
+FlipFlop cpuDataIn_3 has been replicated 4 time(s)
+FlipFlop cpuDataIn_4 has been replicated 3 time(s)
+FlipFlop cpuDataIn_5 has been replicated 4 time(s)
+FlipFlop cpuDataIn_6 has been replicated 4 time(s)
+FlipFlop cpuDataIn_7 has been replicated 3 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 374
+ Flip-Flops                                            : 374
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : spaceinvaders.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1770
+#      GND                         : 4
+#      INV                         : 16
+#      LUT1                        : 55
+#      LUT2                        : 103
+#      LUT3                        : 91
+#      LUT4                        : 141
+#      LUT5                        : 244
+#      LUT6                        : 683
+#      MUXCY                       : 180
+#      MUXF7                       : 55
+#      VCC                         : 4
+#      XORCY                       : 194
+# FlipFlops/Latches                : 380
+#      FD                          : 23
+#      FD_1                        : 10
+#      FDC                         : 1
+#      FDCE                        : 32
+#      FDE                         : 116
+#      FDE_1                       : 155
+#      FDPE                        : 2
+#      FDR                         : 15
+#      FDRE                        : 18
+#      FDSE                        : 8
+# RAMS                             : 12
+#      RAMB16BWER                  : 4
+#      RAMB8BWER                   : 8
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 20
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      OBUF                        : 18
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             380  out of  11440     3%  
+ Number of Slice LUTs:                 1333  out of   5720    23%  
+    Number used as Logic:              1333  out of   5720    23%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1488
+   Number with an unused Flip Flop:    1108  out of   1488    74%  
+   Number with an unused LUT:           155  out of   1488    10%  
+   Number of fully used LUT-FF pairs:   225  out of   1488    15%  
+   Number of unique control sets:        45
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    102    19%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                8  out of     32    25%  
+    Number using Block RAM only:          8
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                                   | Load  |
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------+
+allClocks/pll_base_inst/CLKOUT0    | BUFG                                                                                                                                    | 348   |
+allClocks/pll_base_inst/CLKOUT3    | BUFG                                                                                                                                    | 51    |
+readWriteMemory/N1                 | NONE(readWriteMemory/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram)| 1     |
+invadersRom/N1                     | NONE(invadersRom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)   | 4     |
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 14.666ns (Maximum Frequency: 68.185MHz)
+   Minimum input arrival time before clock: 7.347ns
+   Maximum output required time after clock: 4.240ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'allClocks/pll_base_inst/CLKOUT0'
+  Clock period: 14.666ns (frequency: 68.185MHz)
+  Total number of paths / destination ports: 190717 / 831
+-------------------------------------------------------------------------
+Delay:               7.333ns (Levels of Logic = 6)
+  Source:            cpuDataIn_7_1 (FF)
+  Destination:       cpu/tempReg1_7 (FF)
+  Source Clock:      allClocks/pll_base_inst/CLKOUT0 falling
+  Destination Clock: allClocks/pll_base_inst/CLKOUT0 rising
+
+  Data Path: cpuDataIn_7_1 to cpu/tempReg1_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            3   0.525   1.196  cpuDataIn_7_1 (cpuDataIn_7_1)
+     LUT5:I0->O            6   0.254   0.984  cpu/dataIn[7]_dataIn[2]_AND_43_o1 (cpu/dataIn[7]_dataIn[2]_AND_43_o)
+     LUT6:I4->O            2   0.250   0.726  cpu/_n3826_inv221 (cpu/_n3826_inv22)
+     LUT6:I5->O            1   0.254   0.682  cpu/_n3826_inv7_SW0 (N848)
+     LUT4:I3->O            1   0.254   0.682  cpu/_n3826_inv7_SW1 (N882)
+     LUT6:I5->O            8   0.254   0.944  cpu/_n3826_inv7 (cpu/_n3826_inv)
+     LUT5:I4->O            1   0.254   0.000  cpu/tempReg1_7_rstpot (cpu/tempReg1_7_rstpot)
+     FD:D                      0.074          cpu/tempReg1_7
+    ----------------------------------------
+    Total                      7.333ns (2.119ns logic, 5.214ns route)
+                                       (28.9% logic, 71.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'allClocks/pll_base_inst/CLKOUT3'
+  Clock period: 6.593ns (frequency: 151.669MHz)
+  Total number of paths / destination ports: 1661 / 196
+-------------------------------------------------------------------------
+Delay:               6.593ns (Levels of Logic = 3)
+  Source:            videoController/hcount_3 (FF)
+  Destination:       videoController/vindex_7 (FF)
+  Source Clock:      allClocks/pll_base_inst/CLKOUT3 rising
+  Destination Clock: allClocks/pll_base_inst/CLKOUT3 rising
+
+  Data Path: videoController/hcount_3 to videoController/vindex_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.525   1.234  videoController/hcount_3 (videoController/hcount_3)
+     LUT5:I0->O            1   0.254   0.910  videoController/_n01182_SW0 (N37)
+     LUT6:I3->O           31   0.235   1.779  videoController/_n01182 (videoController/_n01182)
+     LUT4:I0->O            8   0.254   0.943  videoController/_n01181 (videoController/_n0118)
+     FDSE:S                    0.459          videoController/vindex_0
+    ----------------------------------------
+    Total                      6.593ns (1.727ns logic, 4.866ns route)
+                                       (26.2% logic, 73.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'allClocks/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 196 / 168
+-------------------------------------------------------------------------
+Offset:              7.347ns (Levels of Logic = 4)
+  Source:            reset (PAD)
+  Destination:       cpu/aluOperandA_7 (FF)
+  Destination Clock: allClocks/pll_base_inst/CLKOUT0 rising
+
+  Data Path: reset to cpu/aluOperandA_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            64   1.328   2.385  reset_IBUF (reset_IBUF)
+     LUT6:I0->O            5   0.254   0.949  cpu/_n4327_inv11 (cpu/_n4327_inv1)
+     LUT6:I4->O            1   0.250   0.682  cpu/_n4327_inv21 (cpu/_n4327_inv2)
+     LUT6:I5->O            8   0.254   0.943  cpu/_n4022_inv1 (cpu/_n4022_inv)
+     FDE:CE                    0.302          cpu/aluOperandA_0
+    ----------------------------------------
+    Total                      7.347ns (2.388ns logic, 4.959ns route)
+                                       (32.5% logic, 67.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'allClocks/pll_base_inst/CLKOUT3'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              4.240ns (Levels of Logic = 1)
+  Source:            videoController/red_0 (FF)
+  Destination:       red<3> (PAD)
+  Source Clock:      allClocks/pll_base_inst/CLKOUT3 rising
+
+  Data Path: videoController/red_0 to red<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.525   0.803  videoController/red_0 (videoController/red_0)
+     OBUF:I->O                 2.912          red_3_OBUF (red<3>)
+    ----------------------------------------
+    Total                      4.240ns (3.437ns logic, 0.803ns route)
+                                       (81.1% logic, 18.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'allClocks/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.202ns (Levels of Logic = 1)
+  Source:            cpu/status_1 (FF)
+  Destination:       leds<3> (PAD)
+  Source Clock:      allClocks/pll_base_inst/CLKOUT0 rising
+
+  Data Path: cpu/status_1 to leds<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   0.765  cpu/status_1 (cpu/status_1)
+     OBUF:I->O                 2.912          leds_3_OBUF (leds<3>)
+    ----------------------------------------
+    Total                      4.202ns (3.437ns logic, 0.765ns route)
+                                       (81.8% logic, 18.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock allClocks/pll_base_inst/CLKOUT0
+-------------------------------+---------+---------+---------+---------+
+                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------+---------+---------+---------+---------+
+allClocks/pll_base_inst/CLKOUT0|   12.280|    7.333|    5.878|         |
+allClocks/pll_base_inst/CLKOUT3|         |         |    4.575|         |
+-------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock allClocks/pll_base_inst/CLKOUT3
+-------------------------------+---------+---------+---------+---------+
+                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------+---------+---------+---------+---------+
+allClocks/pll_base_inst/CLKOUT3|    6.593|         |         |         |
+-------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 34.00 secs
+Total CPU time to Xst completion: 29.91 secs
+ 
+--> 
+
+
+Total memory usage is 513540 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   21 (   0 filtered)
+Number of infos    :   29 (   0 filtered)
+
