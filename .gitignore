@@ -2,8 +2,7 @@
 
 # exclude rom contents - you'll have to do this yourself!
 rom.mif 
-
-*.bit 
+ 
 *.log
 *.svf
 *.scr
