@@ -136,7 +136,13 @@ process (vgaVsync)
 begin
 
 if (rising_edge(vgaVsync)) then
+	-- interrupt at end of scan (RST 10)
+	cpuInt <= '1';
 	
+else
+	if (cpuInte = '0') then
+		cpuInt <= '0';
+	end if;
 end if;
 
 end process;

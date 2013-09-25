@@ -20,8 +20,8 @@ Port (
 	wr : out  STD_LOGIC;
 	hold : in  STD_LOGIC; -- not implemented
 	hlda : out  STD_LOGIC; -- not implemented
-	inte : out  STD_LOGIC; -- not implemented
-	int : in  STD_LOGIC; -- not implemented
+	inte : out  STD_LOGIC; 
+	int : in  STD_LOGIC; 
 	reset : in STD_LOGIC;
 	status : out STD_LOGIC_VECTOR(3 downto 0));
 end i8080;
@@ -136,8 +136,6 @@ constant regH   :  std_logic_vector(2 downto 0) := "100";
 constant regL   :  std_logic_vector(2 downto 0) := "101"; 
 
 begin
-
-inte <= intEnabled;
 
 registers: RegisterArray PORT MAP(
 	clk => clk,
@@ -258,6 +256,9 @@ begin
 		case (currentState) is
 			when fetch0 =>
 				report to_hstring(pc);
+				if (int and intEnabled) then
+				else
+				end if;
 				addressBus <= pc;
 				dataBusIn <= '1';
 				currentState <= fetch1;
